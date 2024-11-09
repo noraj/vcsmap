@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module Vcsmap
   module Plugin
     class GithubSublimesettings < Vcsmap::Plugin::BasePlugin
       def initialize
         @search_string = 'filename:GitHub.sublime-settings+github_token'
-        @token_regex = /(?:\"|')github_token(?:\"|')\:(?:\ |)(?:\"|')(.*?)(?:\"|')/i
+        @token_regex = /(?:"|')github_token(?:"|'):(?:\ |)(?:"|')(.*?)(?:"|')/i
       end
 
       def credentials(file)
@@ -14,7 +16,7 @@ module Vcsmap
       end
 
       def table_header
-        %w(Protocol Token)
+        %w[Protocol Token]
       end
     end
   end

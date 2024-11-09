@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Vcsmap
   module Plugin
     class InstagramTokens < Vcsmap::Plugin::BasePlugin

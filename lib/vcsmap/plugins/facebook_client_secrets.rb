@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module Vcsmap
   module Plugin
     class FacebookClientSecrets < Vcsmap::Plugin::BasePlugin
       def initialize
         @search_string = 'filename:fb_client_secrets.json+app_secret'
-        @app_id_regex = /(?:\"|')app_id(?:\"|')\:(?:\ |)(?:\"|')(.*?)(?:\"|')/i
-        @app_secret_regex = /(?:\"|')app_secret(?:\"|')\:(?:\ |)(?:\"|')(.*?)(?:\"|')/i
+        @app_id_regex = /(?:"|')app_id(?:"|'):(?:\ |)(?:"|')(.*?)(?:"|')/i
+        @app_secret_regex = /(?:"|')app_secret(?:"|'):(?:\ |)(?:"|')(.*?)(?:"|')/i
       end
 
       def credentials(file)
@@ -16,7 +18,7 @@ module Vcsmap
       end
 
       def table_header
-        %w(Protocol app_id app_secret)
+        %w[Protocol app_id app_secret]
       end
     end
   end

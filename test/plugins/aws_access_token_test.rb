@@ -7,11 +7,11 @@ describe Vcsmap::Plugin::AwsAccessToken do
   let(:plugin) { Vcsmap::Plugin::AwsAccessToken.new }
 
   let(:file) do
-    <<-eos
+    <<-EOS
       [contoso]
       aws_access_key_id = AKIAED8B369A90EDAB2A
       aws_secret_access_key = EAB37ae33174B8A2B0f0/3798C78ca26EAB37AE3
-    eos
+    EOS
   end
 
   describe '#capture_match' do

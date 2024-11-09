@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Vcsmap
   module Helpers
     def self.project_directory

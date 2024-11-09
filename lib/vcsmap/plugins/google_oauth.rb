@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module Vcsmap
   module Plugin
     class GoogleOauth < Vcsmap::Plugin::BasePlugin
       def initialize
         @search_string = 'filename:client_secrets.json+.apps.googleusercontent.com'
-        @client_id_regex = /(?:\"|')client_id(?:\"|')\:(?:\ |)(?:\"|')(.*?)(?:\"|')/i
-        @client_secret_regex = /(?:\"|')client_secret(?:\"|')\:(?:\ |)(?:\"|')(.*?)(?:\"|')/i
+        @client_id_regex = /(?:"|')client_id(?:"|'):(?:\ |)(?:"|')(.*?)(?:"|')/i
+        @client_secret_regex = /(?:"|')client_secret(?:"|'):(?:\ |)(?:"|')(.*?)(?:"|')/i
       end
 
       def credentials(file)
@@ -16,7 +18,7 @@ module Vcsmap
       end
 
       def table_header
-        %w(Protocol client_id client_secret)
+        %w[Protocol client_id client_secret]
       end
     end
   end

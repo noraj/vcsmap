@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Vcsmap
   module Plugin
     class AwsAccessToken < Vcsmap::Plugin::BasePlugin
@@ -6,7 +8,7 @@ module Vcsmap
                           'filename:config',
                           'filename:credentials'].join('+')
         @access_key_id_regex = /=\s+(AKIA[0-9A-Z]{16})/
-        @secret_access_key_regex = %r{=\s+([0-9a-zA-Z\/+]{40})}
+        @secret_access_key_regex = %r{=\s+([0-9a-zA-Z/+]{40})}
       end
 
       def credentials(file)

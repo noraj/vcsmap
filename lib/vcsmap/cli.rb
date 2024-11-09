@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'tty-table'
 
 module Vcsmap
@@ -77,10 +79,10 @@ module Vcsmap
       csv_writer = Vcsmap::CsvWriter.new(@plugin, plugin.table_header, data)
       csv_writer.write!
 
-      unless no_ascii
-        table = TTY::Table.new plugin.table_header << 'Repo', data
-        puts table.render(:ascii)
-      end
+      return if no_ascii
+
+      table = TTY::Table.new plugin.table_header << 'Repo', data
+      puts table.render(:ascii)
     end
   end
 end

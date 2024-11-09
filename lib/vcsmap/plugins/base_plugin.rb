@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Vcsmap
   module Plugin
     class BasePlugin
@@ -6,6 +8,7 @@ module Vcsmap
       def capture_match(regex, file)
         match = regex.match(clean_file(file))
         return '' if match.nil?
+
         match.captures.first
       end
 

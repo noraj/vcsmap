@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 module Vcsmap
   module Plugin
     class FilezillaXml < Vcsmap::Plugin::BasePlugin
       def initialize
         @search_string = 'filename:filezilla.xml+Pass'
-        @host_regex = /<Host>(.*)<\/Host>/
-        @username_regex = /<User>(.*)<\/User>/
-        @password_regex = /<Pass>(.*)<\/Pass>/
-        @encoded_password_regex = /<Pass encoding="base64">(.*)<\/Pass>/
-        @port_regex = /<Port>(.*)<\/Port>/
+        @host_regex = %r{<Host>(.*)</Host>}
+        @username_regex = %r{<User>(.*)</User>}
+        @password_regex = %r{<Pass>(.*)</Pass>}
+        @encoded_password_regex = %r{<Pass encoding="base64">(.*)</Pass>}
+        @port_regex = %r{<Port>(.*)</Port>}
       end
 
       def credentials(file)
@@ -19,7 +21,7 @@ module Vcsmap
       end
 
       def table_header
-        %w(Protocol Host Port Username Password)
+        %w[Protocol Host Port Username Password]
       end
 
       private
@@ -30,6 +32,7 @@ module Vcsmap
 
         return @pass unless @pass.empty?
         return Base64.decode64(@base64_pass) unless @base64_pass.empty?
+
         ''
       end
     end
