@@ -4,3 +4,5 @@
 !output/.gitkeep
 output/*
 *.gem
+# ASDF
+.tool-versions

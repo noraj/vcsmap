@@ -2,9 +2,10 @@ source 'https://rubygems.org'
 
 gem 'pry'
 
-gem 'tty'
 gem 'http'
 gem 'nokogiri'
+gem 'ostruct', '~> 0.6.1'
+gem 'tty'
 
 group :test do
   gem 'minitest'
