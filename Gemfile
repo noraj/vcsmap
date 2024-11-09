@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'pry'
 
+gem 'csv', '~> 3.3'
 gem 'http'
 gem 'nokogiri'
 gem 'ostruct', '~> 0.6.1'
