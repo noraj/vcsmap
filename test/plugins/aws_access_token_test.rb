@@ -1,7 +1,7 @@
-require_relative '../test_helper'
+# frozen_string_literal: false
 
-require 'plugins/base_plugin'
-require 'plugins/aws_access_token'
+require 'minitest/autorun'
+require 'vcsmap'
 
 describe Vcsmap::Plugin::AwsAccessToken do
   let(:plugin) { Vcsmap::Plugin::AwsAccessToken.new }
@@ -19,7 +19,7 @@ describe Vcsmap::Plugin::AwsAccessToken do
       credentials = plugin.credentials(file)
 
       expected = ['AKIAED8B369A90EDAB2A', 'EAB37ae33174B8A2B0f0/3798C78ca26EAB37AE3']
-      credentials.must_equal expected
+      expect(credentials).must_equal expected
     end
   end
 end

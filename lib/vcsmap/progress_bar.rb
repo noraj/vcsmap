@@ -1,4 +1,4 @@
-require 'tty'
+require 'tty-progressbar'
 
 module Vcsmap
   class ProgressBar

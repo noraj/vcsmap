@@ -1,4 +1,4 @@
-require 'tty'
+require 'tty-table'
 
 module Vcsmap
   class CLI

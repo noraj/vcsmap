@@ -3,28 +3,26 @@ require 'yaml'
 require 'nokogiri'
 
 # TODO: include only if needed
-require_relative 'vcsmap/cli'
-require_relative 'vcsmap/csv_writer'
-require_relative 'vcsmap/progress_bar'
+require 'vcsmap/cli'
+require 'vcsmap/csv_writer'
+require 'vcsmap/progress_bar'
 
-require_relative 'vcsmap/helpers'
-require_relative 'vcsmap/plugin'
-require_relative 'vcsmap/plugin_list'
-require_relative 'vcsmap/provider'
+require 'vcsmap/helpers'
+require 'vcsmap/plugin'
+require 'vcsmap/plugin_list'
+require 'vcsmap/provider'
 
 # TODO: work on require_all
-require_relative 'vcsmap/plugins/base_plugin'
-require_relative 'vcsmap/plugins/aws_access_token'
-require_relative 'vcsmap/plugins/facebook_client_secrets'
-require_relative 'vcsmap/plugins/filezilla_xml'
-require_relative 'vcsmap/plugins/github_sublimesettings'
-require_relative 'vcsmap/plugins/google_oauth'
-require_relative 'vcsmap/plugins/instagram_tokens'
-require_relative 'vcsmap/plugins/solr_dataconfig'
-require_relative 'vcsmap/plugins/wordpress_config'
+require 'vcsmap/plugins/base_plugin'
+require 'vcsmap/plugins/aws_access_token'
+require 'vcsmap/plugins/facebook_client_secrets'
+require 'vcsmap/plugins/filezilla_xml'
+require 'vcsmap/plugins/github_sublimesettings'
+require 'vcsmap/plugins/google_oauth'
+require 'vcsmap/plugins/instagram_tokens'
+require 'vcsmap/plugins/solr_dataconfig'
+require 'vcsmap/plugins/wordpress_config'
 
-require_relative 'vcsmap/providers/github'
+require 'vcsmap/providers/github'
 
-module Vcsmap
-  VERSION = '2.0.2'.freeze
-end
+require 'vcsmap/version'
